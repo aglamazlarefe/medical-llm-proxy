@@ -1,13 +1,14 @@
 import fetch from "node-fetch";
 
 export default async function handler(req, res) {
-  // CORS ayarları
+  // CORS header'ları
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
   if (req.method === "OPTIONS") {
-    res.status(200).end(); // Preflight isteğine cevap
+    // Preflight isteğine cevap
+    res.status(200).end();
     return;
   }
 
